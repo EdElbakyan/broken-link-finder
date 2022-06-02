@@ -34,7 +34,7 @@ def check_response(url):
       print("\n")
       print(10*"*")
   except requests.exceptions.ConnectionError as e:
-    print("No Response - "+url)481067
+    print("No Response - "+url)
 
 
 
