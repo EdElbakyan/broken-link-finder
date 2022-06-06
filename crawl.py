@@ -23,9 +23,7 @@ def check_response(url):
     r = requests.get(url)
     if r.status_code != 200:
       print(10*"*")
-      print(3*"\n")
       print(f"{r.status_code} - {url}")
-      print(3*"\n")
       print(10*"*")
       with open('broken.txt', 'a') as broken:
         broken.write(r.status_code+"\n"+url+"-"+new_page+"\n")
