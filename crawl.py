@@ -1,4 +1,5 @@
 import re
+import sys
 import requests
 from bs4 import BeautifulSoup
 
@@ -33,10 +34,10 @@ def check_response(url):
       print("\n")
       print("\n")
       print(10*"*")
-  except requests.exceptions.ConnectionError as e:
+  except:
+    print(10*"*")
     print("No Response - "+url)
-
-
+    print(10*"*")
 
 
 with open('links.txt', 'r') as f:
@@ -45,4 +46,9 @@ with open('links.txt', 'r') as f:
       break
     else:
       link = i.strip()
-      get_links(link)
+      try:
+        get_links(link)
+      except KeyboardInterrupt:
+        sys.exit()
+      except:
+        print("error")
